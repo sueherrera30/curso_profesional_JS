@@ -14,13 +14,4 @@ btn.onclick = () => {player.playOrPause()}
 
 
 
-
-
-
-
-
-
-
-
-
 // nota: entender comportsamiento de this en funcion play 
