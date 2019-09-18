@@ -10,11 +10,9 @@ MediaPlayer.prototype.initPlugins = function (){  // esta funcion hara cositas c
         plugin.run(this) //  este metodo ya pertecece a los plugins, en este caso solo tenemos autoplay, ahi vamso a guardar metodo run.
     });// por cada plugin recibiremos una accion, por ello vamos a iterarlo.,dentro del foreach ejecutaremos su acciom, llamando a un metodo especifico. 
 }
-
 MediaPlayer.prototype.play = function(){
     this.media.play()
 }
-
 MediaPlayer.prototype.playOrPause = function() {
     if(this.media.paused === true) return this.media.play() 
     return this.media.pause()
@@ -22,4 +20,14 @@ MediaPlayer.prototype.playOrPause = function() {
 MediaPlayer.prototype.mute = function(){
     this.media.muted = true;
 }
+MediaPlayer.prototype.unmute = function(){
+    this.media.muted = false;
+}
+MediaPlayer.prototype.muteOrNoT = function(){
+    if(this.media.muted) return this.media.muted = false;
+        return this.media.muted = true;
+}
+
+
+
 export default MediaPlayer;
