@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scope</title>
+</head>
+<body>
+    <script>
+
+// S C O P E 
+// CASO 1.
+        // VAR: al declarar la variable coon var, la declara de forma global, por tanto va a correr el loop, hasta terminarlo llegará a la funcion de setimeout, para ese entonce
+        // i ya valdrá 10.
+        function imprimirNumeros(){
+            for(var i= 0; i < 10; i++){
+               setTimeout(function(){
+                   console.log(i)
+               },100)
+            }
+        }
+        imprimirNumeros();
+
+        // CASO 2:
+        // para evitar esto el setimeout lo vamos a guardar en una funcion guardandolo con un argumento n(numero)asi cambiaremos el scope, es a n a quien llamamos cada que ocurra el loop
+        //al llamar a esta funcion que avraza al settime, vamos a pasarle i como parametro, asi va a cambiar el scope, se refiere a n, que paso a ser un scope totalmente nuevo.
+        function imprimirNumerosDos(){
+            for(var i= 0; i <= 10; i++){
+                function imprimirUnoaUno(n){
+                    setTimeout(function(){
+                    console.log(n)
+                    },100)
+                }
+                imprimirUnoaUno(i) 
+            }
+        }
+        imprimirNumerosDos();
+
+        // caso 3: B L O C K SCOPE, aqui no necesitamos meterla en funcion, la considera un scope particular al usar let.
+        function imprimirNumerosTres(){
+            for(let i= 0; i <= 15; i++){
+               setTimeout(function(){
+                   console.log(i)
+               },100)
+            }
+        }
+        imprimirNumerosTres()
+    </script>
+</body>
+</html>
