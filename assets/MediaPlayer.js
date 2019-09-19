@@ -6,8 +6,8 @@ function MediaPlayer(config){
 
 MediaPlayer.prototype.initPlugins = function (){  // esta funcion hara cositas con todos los plugins que hayamos definido.
     this.plugins.forEach(plugin => {
-                         // en este this se esta haciendo referencia a la instancia de player
-        plugin.run(this) //  este metodo ya pertecece a los plugins, en este caso solo tenemos autoplay, ahi vamso a guardar metodo run.
+        plugin.run(this)  // en este this se esta haciendo referencia a la instancia de player
+                         //  este metodo ya pertecece a los plugins, en este caso solo tenemos autoplay, ahi vamso a guardar metodo run.
     });// por cada plugin recibiremos una accion, por ello vamos a iterarlo.,dentro del foreach ejecutaremos su acciom, llamando a un metodo especifico. 
 }
 MediaPlayer.prototype.play = function(){
@@ -27,7 +27,5 @@ MediaPlayer.prototype.muteOrNoT = function(){
     if(this.media.muted) return this.media.muted = false;
         return this.media.muted = true;
 }
-
-
 
 export default MediaPlayer;

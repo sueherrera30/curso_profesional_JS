@@ -8,7 +8,10 @@ const btnUnmute = document.getElementById('unmute');
 console.log(btnUnmute)
 
 
-const player = new MediaPlayer({el: video, plugins:[new AutoPLay ]}); //in stanceamos a mediaplayer y pasamos un objeto de configuracion dentro de las propiedades del a inastancia
+const player = new MediaPlayer({
+    el: video, 
+    // plugins:[new AutoPLay],
+}); //in stanceamos a mediaplayer y pasamos un objeto de configuracion dentro de las propiedades del a inastancia
 
 btn.onclick = () => {player.playOrPause()}
 btnUnmute.onclick = () => {player.muteOrNoT()}
