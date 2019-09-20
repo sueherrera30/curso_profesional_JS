@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>
+      Function.prototype.call, Function.prototype.apply, Function.prototype.bind
+    </title>
+  </head>
+
+  <body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <ul>
+      <li><button class="call-to-action">Aprender</button></li>
+      <li><button class="call-to-action">Aprender Más</button></li>
+      <li><button class="call-to-action">¡Nunca parar de Aprender!</button></li>
+    </ul>
+
+    <script>
+      //1.  Establece `this` usando `call`
+      function saludar() {
+        console.log(`Hola. Soy ${this.name} ${this.apellido}`);
+      }
+
+      const sue = {
+        name: 'sue',
+        apellido: 'martinez',
+      };
+
+      saludar.call(sue);
+
+      // 2.- Establece `this` usando `call` y pasar argumentos a la función
+      function caminar(metros, direccion) {
+        console.log(`${this.name} camina ${metros} metros hacia ${direccion}.`);
+      }
+
+      caminar.call(sue, 400, 'norte');
+
+      // 3.- usando apply:
+
+      function hacerBurpees(n,min){
+        console.log(`${this.name} hace ${n} burpees en ${min} minutos`);
+      }
+      const valores = [56,3];
+      hacerBurpees.apply(sue,valores);
+
+      // D I F E R E N C I A S:
+      /*
+        Call - comma
+        Apply - arreglo
+      */
+
+      // Usando BIND:
+      // Establecer `this` en una nueva función usando `bind`
+      const daniel = { name: 'Daniel', apellido: 'Sánchez' };
+      const danielSaluda = saludar.bind(daniel);
+      danielSaluda();
+
+      const danielCamina = caminar.bind(daniel, 2000);
+      danielCamina('oeste');
+
+      // Cuándo es útil usar uno de estos métodos
+      const buttons = document.getElementsByClassName('call-to-action');
+      // buttons.forEach(button => {
+      //   button.onclick = () => alert('Nunca pares de aprender!');
+      // });
+
+      // NodeList
+      Array.prototype.forEach.call(buttons, button => {
+        button.onclick = () => alert('Nunca pares de aprender!');
+      });
+    </script>
+  </body>
+</html>
