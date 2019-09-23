@@ -1,0 +1,59 @@
+
+que pasa cuando lleva un script al navegador? 
+este comienza un proceso ejecutado por el motor de js, que va a analizar, lo va a construir lo ejecuta y despues 
+lo optimiza.
+
+LA WEB: 
+Al llegar  JS llego con NETSCASPE, aqui era simple, se iba leyendo linea por linea y se iba ejecutango a l vez y lo va interpretando.
+//esto sigue siendo cierto, pro con procesos diferentes.
+
+// se reivento su proceso que quedo asi:
+
+1.- recibe codigo fuente
+2. parsea el codigo y produce un ----- abstract syntax tree -----(AST)
+3.- se compila bycode y se ejecuta.
+4.- se otimiza a machine code t se remplza el codigo base.
+
+PARSER: 
+
+Nos va a ayudar a leer un codigo fuente, despues lo va a descomponer en trocitos 
+estos trzos son tokens que identifican si es un operador, o un string o algo ,--- despues tenemos un abstrack syntax tree.
+cuando el parser analiza el programa y  pasa algo que no le hace sentido cuando el motor de JS 
+se encuentra en partes de codigo que no forman parte de la syntaxis de lenguaje al momento de analizar el codigo.
+
+el proceso de parcing es 15 al 20% de ejecución. 
+la mayoria del cidigo no llega a ejecutarse,es por eso que necesitamos librerias
+debemos hacer --- bundling  y code spliting -- esto significa que el codigo lo tenemos  empaquetar de forma eficiente en donde hay unos
+archivos de codigo separados logicamente y que solo vamos a cargar cuand sean necesarios.
+
+hay dos maneras de hacer PARSING 
+el procesador de google que es v8 o el de node que es el mismo 
+
+EAGER PARSING:
+encuentra errores de syntaxis 
+crea el AST ---> SIMPLEMENTE ES UN ARBOL  , UNA ESTRUCTURA EN FORMA DE ARBOL,QUE REPRESENTA TU PROGRAMA.
+construye scopes.. ya desde ahi sabemos que variables podran exisitr en que tiempo o espacio.
+
+LAZY PARSING:
+Doble de rapido que el eager.
+no crea AST
+construye los scopes parcislmente
+
+ABSTRACT SYNTAX TREE:
+es un grado es una estructura en forma de arbol, nuestra raiz es nuestro 
+programa que se va a ir dividiendo en partes con los tokens.
+
+no solo sirve para ejecutsar programa de js, tambien nos aydua a trasnformar un codigo a otro, por ejemplo esl oque hace bsbel,
+
+se usa en:
+JS engine
+BUNDLERS: WEBPACK, ROLLUP, PARCEL 
+TRANSPILERS: BABEL 
+LINTERS: ESLINT, PRETTIFY
+TYPE CHEKERS: TYPESCRIPT, FLOW
+SYNTAX HIGHLIGHTERS
+
+
+
+
+

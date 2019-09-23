@@ -1,0 +1,35 @@
+//promesa que nos devolcera lso id de las pelicula mas populares:
+// cuando queremos usar sync await , debemos pasar al inicio de la funcion la palabra reservada : async
+// async await : siemrpe va a regresar una promesa.
+// el aeait siempre dentro de funcion asincrona ester, nos ayudsará a pausar la ejecución de la función 
+//y resumir en cuanto larespuesta venga.
+// try and catch, solo son para encapsular el codigo y permitir que se pueda manejar errores si hay.
+// SYNawait es una forma ms limpia de hacer procesos asincronos.
+// AWAIT espera hasta que la funcion (PROMISES) resuelva or rechace.
+ 
+// en promesas: 
+// In conclusion, when we call the promise if it executes successfully the .then method 
+// is called and we get back “Answer text immediately” otherwise if the promise fails we get back,
+//  “Not in the mood to text back”.
+
+
+// con fetch:
+const apiKey = 'b89fc45c2067cbd33560270639722eae';
+// function getMovie(id) {
+//   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
+  
+// }
+
+function getPopularMovies() {
+    const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
+    fetch(url)
+    .then(response => response.json())
+    .then(data => data.results = console.log(data, data.results));
+   
+  }
+  getPopularMovies();
+
+  const saludoCris = name => {
+    console.log(` señor ${name} tu essssstrañame tambien >.< `);
+  }
+  saludoCris('cris');

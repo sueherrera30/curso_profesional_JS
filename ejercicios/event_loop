@@ -1,0 +1,64 @@
+EVENT LOOP: 
+
+es l oque hace parecer que js es un multi hilo, cuando en realidad solo es 1 hilo.
+¿cómo podemos hacer tantas acciones(scroll,clicks, cargar imagenes etc) en una sola vez? ---event loop.
+
+JS se organiza utilizando 2 estructuras de datos:
+
+STACK: estructura que lleva rastro de donde esta el programa.
+
+MEMORY HEAT: estructura desorganizada,es  aleatoria, ahi se guarda info como variables, scope etc.
+
+stack ya a comenzar vacio, luego en el contenedor sumanos un plato, push otro plato etc asi vamos apilando.
+si quieres sacar el plato de abajo, debemos hacder POP. 
+ahi estan nuestra funciones esta el REGISTRO de COMO ESTAN OPERANDO NUESTRAS FUNCIONES.
+APUNTA hacia variable como el scope,va distribuyendo, dice esto tiene acceso al scope, esto a las variables etc etc.
+
+STACK:
+
+el stack va leyendo hacia arrtiba, pero puede ir cambiando.si es que el programa es ASINCRONO.
+SE VA APILANDO pero si aun no le toca solo lo identifica pero no lo ejecuta, cuando el normal,mete y saca ,termina programa,
+pero este proceso asincrono cuando ya esta disponible es ejecutado, inicia el proceso de nuevo en el proceso que dejamos pemndiete.
+Esta estructura luce vertical
+
+QUEUE:
+
+es una FILA,
+estructura de datos es como el stack, si en stack las cosas entran es lo ULTIMO QUE SALE:
+aqui inverso.
+lo PRIMERO QUE ENTRA ,es lo primero que sale, es como en el banco el primero de la fila, quien llego primero, 
+es el primero en ser atendido.
+esta estructura se ve horizontal.
+
+al usar un timeout se queda agendada una tarea, al cumplirse lo primcipal, se pasa lo que esata agendado.
+del stack queue pasa al stack.
+
+EVENT LOOP, es un programa un script, que esta en medio del stack Y La cora de tarea, esta todo el tiempo viendo 
+si hay tareas tarea tareaaaaaas oooou! encontre una tarea! esta vacio el stack????? si esta vacio 
+event loop va a tomar la tarea y la va a poner en el stack para que se ejecute.
+
+que pasa si mi programa esta ocupado, hay capas, platos, y esta ejecutandose. pero en mis pendientes 
+esta un settimeout que es inmediato,pues tan pronto lo ponga lo voy a sacar y encolar.... pero el programa 
+aun no se acaba :O y justo event loop esta preguntado si hay cosas en la cola de tareas ... entonces como 
+sta vacio esta vacio estaaaa vacio??? 
+upps no :( chaleee aguanta aguanta ... ya merito ya merito ? ya cuando lo encuentra vacio boom lo agarra y echa a correr ese programa
+
+dos tareas: 
+la primera que se agendo se ejecuta en 30milisegundos y la 2da en 0!!!!
+por lo tanto,si a la primera aun le falta la de cero va a terminar primero, asi que la agendamos,pero se 
+poner primero en la cola para meterse cuando event loop este listo.
+
+pero las promesaaaaas .... 
+promesa de que algo va a pasar, se puede rechazar o aceptar eventualmente, osea es asincrono.
+
+CHAN CHAN CHAN LAS PROMESAS VAN EN OTRA COLA: la cola de MICRO TAREAS:
+cuando en el programa  tenemos las promesas ya encoladas,el settimeout se va agendar,se vacia el stack,
+y entonces l oque va a hacer el event loop es que va a empezar a agarrar las micro tareas, va a agarrar la promesa 1 ,va a volver a las micros, y se lleva la 2
+por que le va a  dar preferencia a las micro tareas, y ahora si ya, vamos a las tareas :O 
+
+parece que js ejecuta mchos hilos cuando es los una cosa a la vez, pero depende aeu forma lo haga.
+asi aque ojoo! nunca bloquear un EVENT LOOP 
+ejemplo si tenemos un while true, ese loop nunca  va a acabar, por lo tanto el event looop nunca se va a vaciar 
+y nunca va a poder atender lo agendado :0
+
+

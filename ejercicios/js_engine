@@ -1,0 +1,30 @@
+despues de que parser hizo trabajo el compilador sigue para optener codigo optimizado.
+
+que es JS ENGINE:
+1. recibimos codigo fuente
+2. parsea y recibe un AST
+3. Se compila a bycode y se ejecuta
+4. se optimiza a michine code y remplaza el codigo base
+
+
+cuando el bycode se esta ejecutando hay un programa que esta observando,y va a estar tomando notas,al tener
+las notas suficentes,es capas de tomar decisiones  para optimizar tu codigo, y asi tener CODIGO OPTIMIZADO.
+
+       BYCODE ---- VS ---- MACHINE CODE 
+- codigo parecido         - BINARIO(rapido ya que no hay que traducirlo )
+a assembly
+(lenguaje de bajo       - instrucciones especificas a una 
+nivel)                  arquitectura o procesador.
+
+- portatil
+
+- se ejecuta en 
+VIRTUAL MACHINE
+
+profiling ... es quien esta observando.
+
+v8 ... hot function - cada vez mas caliente(ejemplo for) 
+listo pafa ejecutarse.
+
+SPIDERMONCKEY -- MOZILLA 
+JSCORE -- SAFARI( 3 capas)

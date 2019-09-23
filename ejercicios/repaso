@@ -1,0 +1,82 @@
+S C O P E:
+
+ambito en el que define el tiempo de vida de una variable
+sabes a que tienes acceso --s
+saber que variables puedo ejecutar, que funciones puedo utilizar.
+al definir esto tenemos mejores practicas, global scope, es peligroso - ejemplo cartera, cada qwuien puede tomar y tocarla quien sabe en que estado regresara.
+nos permite entender cuando var / const /let  se utiliza.
+Saber seguro donde llega tu data.
+
+C L O U S E R S:
+
+oob, se tiene mas oportunidad de definir la visibilidad de las variables.
+nos permite envapsular los valores de una funcion 
+
+son funciones que regresan una funcion o un objeto con funciones que mantienen las variables que fueron declaradas fuera de su scope.
+
+para que sirve? 
+da flexibilidad como tener acceso a variables. 
+podemos definir como las variables interactuan
+- tener variabes  privadas
+- permiten tener estado interno de la función
+entendimiento de que modifica scope de la función.
+mas de pratico es de decidir como funcionara, manejo vendrá con la experiencia.
+es mas un concepto que ayuda mucho para la seguridad - ejemplo de boletos de loteria.
+
+THIS: 
+
+a lo que estas haciendo referencia.
+palabra reservada que determina contexto de ejecución - cual es objeto de ejecución 
+al usar call, apply y bind -- estas haciendo expreso a la llamada.
+CALL / BIND / APPLY: son pointer que señalaran quien es this.
+function cuando queremos que sea this esa funcion ya que arrow marca al padre como this. 
+
+aveces cuando no podemos usar parametros solamente y esta complejo,cuando es mas programatico,cuando quieres como hacer librerias.
+un dia a dia, tiene mas sentido solo llamar 
+
+tratar de usar strict para evitar errores.
+
+
+PROTOTIPOS Y CADENA: 
+
+el prototipo padre es objeto que tiene una serie de metodos disponibles a cada objrto que crees apartir de ahi.
+
+HERENCIA PROTOTIPAL: 
+
+puedo tenr una herencia de objetos que se ira a instancias.
+puedes jugar con la gerarquia que se utiliza.
+errores, es cuando aveces al subir y subir no encuentra la función.
+uso mas bien para inspeccionar y la logica que detona todo.
+
+cuando queremos EDITAR O MODIFICAR  un prototipo, Aantes  al hacer clases . hero.prototype.nombredeloquequierocrear
+
+
+PARSERS Y AST:
+
+back stage the JS.
+
+js es compilado, just in time, 
+v8 - motor de js.
+v8 hace otimizaciones por ti, 
+debemos aprender a utilizar codigo rápido. 
+tomando consideraciones del comportamiento interno del lenguaje
+
+JS ENGINE: 
+hot functions -> CALIENTE - poder ser utilizado.
+
+EVENT LOOP: 
+
+- naturaleza SINGLE TREAT reat, un single core, simula usar muchos :O 
+STACK 
+MEMORY HEAP
+SCHEDULE TASK  
+
+js le da prioridad a promesas sobre procesos asincronos.
+
+NOTAS: 
+-- estudiar HOISTING
+-- checar const como arreglo y como variable solita. 
+-- practicar this y sus metodos.
+-- checar lo dicho de use strict 
+-- recursivo?
+* hacer quiz de repaso.
