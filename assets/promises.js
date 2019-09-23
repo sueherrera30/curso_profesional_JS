@@ -12,7 +12,12 @@
 // is called and we get back “Answer text immediately” otherwise if the promise fails we get back,
 //  “Not in the mood to text back”.
 
+// FOR OF : 
+//nos da cada uno de los valores que esta en el arreglo,
 
+// PROMISE.ALL _>  VA A ESPERAR A QUE  todas las promesas se resuelvan.
+//esta igual nos regresa una promesa
+//con los valores ya resueltos, pero estos ya van a ser objtos con la informacion esperada.
 // con fetch:
 const apiKey = 'b89fc45c2067cbd33560270639722eae';
 // function getMovie(id) {
@@ -29,7 +34,15 @@ function getPopularMovies() {
   }
   getPopularMovies();
 
-  const saludoCris = name => {
-    console.log(` señor ${name} tu essssstrañame tambien >.< `);
-  }
-  saludoCris('cris');
+  // PODEMOS Hacer peticiones en paralelo: con promises.all
+ // de una lista de promesas, enseñar la primera en cumplirse --  no hay garantia de que sea la misma, todo depende de la red, el api etc.
+ // promise.race
+
+ async function getPopularMoviesAsync(n = 3) {
+  const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
+  const result = await fetch(url);
+  const data = await result.json();
+  console.log(data);
+ }
+
+getPopularMoviesAsync();
