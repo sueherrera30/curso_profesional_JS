@@ -37,12 +37,12 @@ function getPopularMovies() {
   // PODEMOS Hacer peticiones en paralelo: con promises.all
  // de una lista de promesas, enseñar la primera en cumplirse --  no hay garantia de que sea la misma, todo depende de la red, el api etc.
  // promise.race
-
+// request:
  async function getPopularMoviesAsync(n = 3) {
   const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
   const result = await fetch(url);
   const data = await result.json();
   console.log(data);
  }
-
 getPopularMoviesAsync();
+
