@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // queremos pasar el nombre completo de una persona no solo en un lugar si no en varios.
+        // pa mas facil, guardar esta union (console.log) en un metodo para solo llamarlo cuando se necesite.
+
+        person = {
+            name: 'suerox',
+            lastName: 'martinez',
+            // fullName() {
+            //     return `${person.name} ${person.lastName}`
+            // },
+            get fullName() {
+                return `${person.name} ${person.lastName}`
+            },
+            set fullName(value) {
+                // aqui agregamos la logica de l oque queremos modificar, en este caso es 
+                //asignar un nombre nuevo,el valor que recibimos lo dividimos para reasignarlo 
+                // como propiedad nueva.
+                const parts = value.split(' ');
+                this.name = parts[0];
+                this.lastName = parts[1];
+            }
+        }
+        // si yo lo reasigno, no podre, por que ya n oseria funcion, seria string y ya no funcionaria
+        //person.fullName = 'nilda herrera';
+        // problemas: 
+        //1. esto solo se lee, no podemos cambiarlo desde afuera,
+        //2. seria mas cool, llamarlo como propuedad, no como metodo,asi ahorar los parentesis.
+        
+        // GETTERS => Accesar a una propiedad
+        //SETTERS => CAMBIARLA O MUTAR una propiedad.
+        // con get podemos asignarle el valor y con set podemos editarla desde fuera
+
+        // set , necesita un parametro , un valor,este valor sera, lo que queremos reasignar,
+        // por ejemplo cuando queria cambiar mi nombre al de nilda. 
+
+        // ya co nel set, ya podemos reasignar de nuevo : 
+        person.fullName = 'josefito bonita';
+        console.log(person.fullName)
+
+    </script>
+</body>
+</html>

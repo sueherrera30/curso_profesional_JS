@@ -1,7 +1,5 @@
 DUDAS: podemos llamar igual a la propiedad virtual??? como set y get muted??
 
-
-
 funciones que se pueden usar dentro de objetos y que nos permiten tener propiedades virtuales, 
 es decir la propiedad no existe ditectamente en el objeto, pero atraves de un 
 getter o setter podemos correr una funcion que va a calcular estos valores 
@@ -39,3 +37,13 @@ a totalplay, a mute etc, eso nos da control.
     SET  mas propuedad virtual.
     los setter NO LOS LLAMAMOS COMO SI FUERAN UNA FUNCION ya que simplemente son un valor virtual que pudieramos asignarle un valorv
     y este valor es el que se va a recibir en objeto player.
+    ojo si voy a devolver un valor( como en la funcion de media player en set muted, debo pasarlo como parametro)
+
+    nos sirven para terner las props virtuales, no existen dsirectamente, no leemos directamente ese valor ,
+    usamos el singo de igual para aginarle un valor ,y através de el ptenemos ese valor y lo podemos usar  para hacer 
+    la logica que nos interesa.
+
+    ---------
+    metodos en objetos, 
+
+
