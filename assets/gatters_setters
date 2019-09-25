@@ -21,7 +21,6 @@ a totalplay, a mute etc, eso nos da control.
          get muted() {
              return this.media.muted;
          }
-
      }
     this.plugins.forEach(plugin => {
         plugin.run(this)      // aqui antes this, ahora player                            

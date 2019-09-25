@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Proxy</title>
+  </head>
+
+  <body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <script src="https://unpkg.com/fast-levenshtein@2.0.6/levenshtein.js"></script>
+    <script>
+      //// NOTAS PROFESOR 
+      // Proxy es parecido a getters y setters
+      // Usa un concepto que se llama traps: son interceptores de llamadas. A diferencia de getters, no opera sobre una propieda, si no sobre un objeto.
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#Methods_of_the_handler_object
+       // Creemos un ejemplo donde interceptamos llamadas para leer una propiedad
+      // Si la propiedad existe, la regresamos
+      // Si no existe, entonces sugerimos una que pueda funcionar
+      // Para eso eso vamos a usar un algoritmo que se llama Levenshtein. (window.Levenshtein.get)
+      // Ejemplos de levenshtein distance (usa window.Levenshtein)
+
+
+
+      8 h,
+      //A diferencia de getters, no opera sobre una propieda, si no sobre un objeto.
+
+      // El proxy sirve para interceptar la lectura de propiedades de un objeto (los get, y set)  https://meet.google.com/_meet/emv-hves-wux?ijlm=1569435238362&hs=122&authuser=1
+
+      // entre muchas otras funciones. Así, antes de que la llamada llegue al objeto podemos
+      //  manipularla con una lógica que nosotros definamos.
+
+
+      // N O T A S:
+      // proxy es un objeto que se bede de instanciar.
+      // va a recibir 2 argumentos : target y el handler  
+      // TARGET: es el objeto que queremos interceptar,osea antes de que una llamada llegue a nuestro 
+      // objeto lo debemos interceptar.
+      // HANDLER: tambien es un objto, que va recibir funciones, funciones trampa
+      // en handler si usamos trampas, las vamos a escribir como llamandolas pasandole los paramentros.
+
+
+      // tenemos handler, target y que nos ayudara  a encontrar las propiedades.
+      // al tratar de buscar vamos a llamar a opjeto p  mas la propiedad que queremos encontrar
+      // por ejemplo: p.reed
+
+
+      /// podemos usar proxyes para ayudar a encontrar valores 
+
+      //DUDAS:
+      // el target, siempre debe ser objeto o puede recibir otras propiedades.
+      //que se refiere con funciones trampa, a que se refiere con interceptar?
+      // if (prop in obj)
+      // obj[prop];
+
+
+
+      const target = {
+        // los primeros son KEYS ,los verdes son los VALORES
+        red: 'Rojo',
+        green: 'Verde',
+        blue: 'Azul',
+      };
+
+      const handler = {
+        // el objero representa el target
+        // y tambien recibie de parametro la propiedad que se trata de leer.
+
+        get(obj, prop) {
+          // verificamos si existe esta propiedad
+          if (prop in obj) {
+            return obj[prop];
+          }
+          // queremos saber cual es la llave que más se parece a lo que estamos buscando.
+          
+          // .key nos ayuda a enlistar todoas las llaves  
+          const suggestion = Object.keys(obj).find(key => {
+            // hacemos una condicion que delimite la logica
+            return Levenshtein.get(key, prop) <= 3;
+          });
+
+          if (suggestion) {
+            console.log(
+              `${prop} no se encontró. Quisiste decir ${suggestion}?`
+            );
+          }
+
+          return obj[prop];
+        },
+      };
+
+      const p = new Proxy(target, handler);
+    </script>
+  </body>
+</html>
