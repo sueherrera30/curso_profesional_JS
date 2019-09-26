@@ -7,7 +7,7 @@ function MediaPlayer(config){
 MediaPlayer.prototype.initPlugins = function (){  // esta funcion hara cositas con todos los plugins que hayamos definido.
      const player = {
         play: () => this.play(),
-        pause: () => this.pause(),
+        pause: () => this.playOrPause(),
         media: this.media,
         get muted(){
             return this.media.muted

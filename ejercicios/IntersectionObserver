@@ -1,0 +1,10 @@
+Se pone a observar un elemento, viendo cual es su POSICION, 
+le pasamos un objeto de cnfijuracion donde definiremos unas marcas.
+
+si este objeto tiene la intersección con respecto a al pantalla, dejanos saber, en que 
+porcentaje esta.
+
+pasos: 
+crear nuevo pugin en objeto y  pasarlo en la listsa en el archivo index.
+
+ 

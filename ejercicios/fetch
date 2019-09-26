@@ -1,0 +1,30 @@
+ detener todo para poder hacer peticiones de datos.
+ ya se podia hacer asincronamente.
+ esto se pudo realizar con método XMLHTTP REQUEST o XHR.
+es relaidad es algo enredado y ceremonioso, por eso se asplico FETCH :D con eso
+asprovevhabamos las promesas,pero ...al salir una peticvion ya nada la detenia :o
+Es preferible detener llamadas si no se usan y asi ahorar bites y mejorar  el rendimiento de 
+nuestra aplicación.
+aqui es que llega : ABORT CONTROLLER - es un features que nos permite enviarle una señal a una petición FETCH
+para que se DETENGA.
+
+Tal vez es rapido, pero pesa mucho eso alenta:O 
+
+BLOB: Es el binario  de la petición  que estamos haciendo,lo estamos combiritiendo en lugar de json
+.blob()
+
+esto se puede crear una url con :
+URL.createObjectURL()
+
+algo asi: 
+consr response = await fetch(url, {})
+cost blob = response.blob()
+const imgUrl = URL.createObjectURL(blob)
+img.src = imgUrl
+
+a fetch se le puede pasar como parametro objetos de configuracion,por ejemplo  adentro con 
+la señal astravés de bort-controler ! ayuda A DETENER UNA PETICION.
+este es la INSTANCIA de un objeto.
+LOS CONTROLLERS tienen una señal que es lo que el fetch necesita.
+
+
