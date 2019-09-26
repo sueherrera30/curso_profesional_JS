@@ -1,0 +1,17 @@
+Se pone a observar un elemento, viendo cual es su POSICION, 
+le pasamos un objeto de cnfijuracion donde definiremos unas marcas.
+
+si este objeto tiene la intersección con respecto a al pantalla, dejanos saber, en que 
+porcentaje esta.
+
+es una nueva herramienta que viene en el dom que nos ayuda s observar elementos  
+y si cruzan un humbral que nosotros definimos dentro de un contenedor como window,
+intersection observer nos lo va a notificar.
+
+ _________________________
+ documento ahora tienen un evento que podemos escuchar que ahora se llama visibility change 
+ podemos ver si visibility STATE.
+ asi como se hixo con el video se puede hacer con otras acciones como cambiar titulos etc.ayudan a ahorrar rendimiento de 
+ nuestras apps.
+
+

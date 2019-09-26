@@ -2,6 +2,7 @@ class AutoPause {
     constructor(){
         this.threshhold = 0.25,
         this.handleIntersection = this.handleIntersection.bind(this);
+        this.handleVisibilityChange = this.handleVisibilityChange.bind(this)
     }
     // recibe un metodo 
     run(player) {
@@ -16,6 +17,7 @@ class AutoPause {
 
         // el observador mirara el video que se reproduce.
         observer.observe( this.player.media);
+        document.addEventListener("visibilitychange", this.handleVisibilityChange)
     }
     // podremos enlistar todos los elementos 
     // en este caso solo hay uno,
@@ -29,10 +31,18 @@ class AutoPause {
             this.player.pause();
         }    
     }
+
+    handleVisibilityChange(){
+        const isVisible = document.visibilityState === "visible"
+        if(isVisible){
+            this.player.play()
+        } else {
+            this.player.pause();
+        }
+    }
 }
 
 export default AutoPause; 
-
 
  // en este mdetodo construiremos el intersectionObserver
 // Recibe dos argumentos, un handler que va a recibir la información 
