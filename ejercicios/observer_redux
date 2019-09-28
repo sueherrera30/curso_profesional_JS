@@ -1,0 +1,16 @@
+redux.
+una libreria de manejo de estados.
+
+inicializaomos un store con un stado y un reducer.
+
+despachas acciones que modifican el estado.
+
+el store NOTIFICA  que el estado cambio.
+
+NODE.JS
+ TIENE LIBRETIA evenemitter
+ EMITTER.ON = SUBSCRIBE
+ .OFF = UNSUBSCRIBE
+ .EMIT = notify.
+
+ 

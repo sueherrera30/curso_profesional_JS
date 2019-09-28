@@ -23,8 +23,11 @@ const imgUrl = URL.createObjectURL(blob)
 img.src = imgUrl
 
 a fetch se le puede pasar como parametro objetos de configuracion,por ejemplo  adentro con 
-la señal astravés de bort-controler ! ayuda A DETENER UNA PETICION.
+la señal astravés de 
+
+ABORT CONTROLLER: ayuda A DETENER UNA PETICION.
 este es la INSTANCIA de un objeto.
+
 LOS CONTROLLERS tienen una señal que es lo que el fetch necesita.
 
 

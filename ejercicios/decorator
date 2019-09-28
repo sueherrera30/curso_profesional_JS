@@ -1,0 +1,41 @@
+forma parte de al categoria patrones estructurales.
+
+ nos ayuda a extender  LA FUNCIONALIDAd de clases sin tener 
+ que  editarla internamente.
+
+responde a la necesidad de  AÑADIR DINAMICAMENTE FUNCIONALIDAD A UN OBJETO.
+asi, no tener que creat sucesivan clases que hereden de la primera incorporando
+la nueva, sino ,OTRAS QUE LA IMPLEMENTN Y SE ASOCIAN A LA PRIMERA.
+
+
+analogia del mundo real:
+al ver tipos de copus, vemos diferencias 
+en almacenaje, hacer esto a mano, como ir incrementando su campacidad.
+
+una buena practica de diseño de softwere, 
+es no estar implementando una y otra vez el codigo.
+
+UNA ENTIDAD DE SOFTWERE (CLASE ,MODULO, FUNCION ETC)
+debe de QUEDAR ABIERTA PARA SU EXTENSIÓN PERO CERRADA PARA SU MODIFICACIÓN.
+
+
+este el principo de OPEN-CLOSE principle.
+
+DECORATOR  
+nuevo patron que AÑADE NUEVAS RESPONSABILIDADES 
+A UN OBJETO DE FORMA D I N A M I C A.
+
+nos permite EXTENDER funcionalidad sin tener que usar subclases.
+
+ 
+ function measure(fn){
+     let start = Date.now()
+    fn()
+    console.log(`TIME ${DATE.NOW() - START }MS)
+ }
+ FUNCTION FIBONACHI(NUM){
+     ....
+ }
+ let finocachi = lodash.memorize(fibonacci)
+
+ measure(() => fastfebonacchi(100000))

@@ -1,0 +1,40 @@
+SINGLETON 
+es un patron ocacional.
+
+es una patron que te asegura que una clase solo tiene una instancia de si misma.
+
+esa unica instancia solo puede ser consumida por cualquier otro objeto. 
+
+UML- NOTACION :
+arriba nombre de la clase  SINGLETON
+despues una propiedad INSTANCE va con simbolo negativo por que indica que 
+es una propiedad provada. y al estar subrayada quiere decir que es estatico.
+
+tenemos luego un constructor que se identifica pro que tiene el  ismo nombre que la clase.
+es provado, no podemos llamar un new singletone(), nos daria una misma instancia que justo es lo que trata de resolver
+este patron
+
+luego es un metodo publico y es estatico. getinstance() va a  ver si ya existe una instancia si no existe la crea 
+y luego la regresa.si e vuelve a llamar, se va a llamar a la misma instancia que ya creo la primera vez .
+
+analogia del gobierno, solo es uno, no dos , asi una sola instancia de algo.
+
+cado de uso orm, mongoose. 
+________________________________________________________
+tiene tres propiedades. 
+1. privada y es su instancia, 
+private statis instance: singletone (que tipo es, singletone)
+
+su constructor:
+
+private constructor(){
+    aqui va una inicialización, para tener la instancia llamamos a get instance  que igual es estatico.
+aun que el constructor es privado, como se declara dentro de la clase si se puede llamar.
+    dentro va el getinstance
+}
+
+util en proyectos cuando se tenga que exponer una sola instancia, por ejemplo, si  tieens dialogos o pantallas
+de modales, y quieres tener solo un sistema de msnejo de modales.
+asi te ayuda a que por ejemplo evites abrir un modal encima de otro, ya que solo puedes trabajar solo uno a la vez.
+
+

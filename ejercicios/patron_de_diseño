@@ -1,0 +1,101 @@
+son como RECETAS que RESUELVEN problemas
+ que nos enfrentamos frecuentemente en diseño de softwere.
+
+ son una SOLUCON  para un problema dentro de un contexto.
+ y este no debe ucurrir solo una vez, si no varias, por que 
+ si no no plo podriamos categorizar como un patron de diseñor .
+ el patron debe aplicar. el resultado debe ser recurrente,
+
+ ejemplo: mu hos objetos estan interesados en el estado de otro objeto.
+
+el patron debe tener limitaciones.
+
+para poder alcanzar la mdeta del contexto la solución dene ser GENERICA,
+np puede solo atender un solo servicio.
+
+ejemplos:
+EVERY LAYOUT 
+MEDIA QUERIES 
+
+HISTORIA:
+vienen de dos libres de christopher aslexander.
+quien buscaba reconocer patros que existieran no solo en la arquitectura 
+si no de toda historia para poder conseguir un lenguaje por ejemplo .
+al hacer este compendiop estas haciendo como un glosario  donde se clasificarqn todas estas
+opciones, para que reinventsr la rueda si lo que tenemos funciona 
+
+4 autores es ribieron design patterns.
+
+
+BENEFICIOS: 
+son como una caja de herramientas  bien porbadas pra errores bien vomunes.
+tener un lenguaje común que te permite COMUNICARTE ESPECIFICA Y EFICASMENTE.
+ 
+ CRITICA: 
+ complejizan proceso.
+ siempre tratr de resolver cosa  de forma simpre pero cuando vea os que no hya una forma facil 
+ ver si hay algo que podamos usar. 
+__________--__________--__________--__________--__________--__________--__________--__________--
+
+Categorías de patrones de diseño:
+
+Creacionales. Proveen diferentes mecanismos para crear objetos.
+
+Estructurales. Describen formas de componer objetos para formar nuevas estructuras flexibles y eficientes.
+
+De Comportamiento. Gestionan algoritmos y responsabilidades entre objetos.
+
+CREACIONALESS______
+abstract factory
+builder
+factory method 
+prototype*
+singleton
+
+builder:
+CREAR  barios objetos através de un objeto fuente.
+es usado para permitir la cvreacion de una variedad de objetod complejods
+desde un objeto fuente.
+separa la creación de un objeto complejo de su estructurs de tal forma que el mismo procesode cvonstrucción
+puede servir para crear representaciones diferentes.
+
+ej.  JQUERY usa este apra crear sus objetos.
+
+
+ ESTRUCTURALES______
+ Describen formas de componer objetos para formar nuevas estructuras 
+ flexibles y eficientes :
+
+ Adapter 
+ bridge 
+ composite 
+ devotator 
+ facade 
+ flywight 
+ proxy: va a recibir llamadas que iban dirigidas a un objeto,pero las intercepta y tiene la oportunidad de hacer algo con ellas
+ finalmente va a terminar pasando la lamada al objeto pero hizo composición para poder interceptar estas llamadas.
+
+ nota, jquery podia trabajar en navegadores por que la intefaz que la componia podia recibirlas.
+
+ COMPORTAMIENTOS______
+formas diferentes de manejar algoritmos y funcionalidades que pueden tner los objetos y las relaciones entre ellos 
+
+observer * un objeto le pasa el estado interno a muchos objetos que estan interesados 
+chain of responsability
+command 
+intersepter
+interator
+mediator
+memento 
+observer 
+state 
+strategy
+template method 
+visitor
+
+composite - un patrom que nos ayuda a que sin importar que elemento se tiene. ya sea un arreglo o solo uno 
+los trata a todos iguales, por ejemplo en jquery selector de id, o de class.
+
+
+
+

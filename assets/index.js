@@ -18,6 +18,15 @@ const player = new MediaPlayer({
 btn.onclick = () => {player.playOrPause()}
 btnUnmute.onclick = () => {player.muteOrNoT()}
 
+// para SERVICE WORKERS que detectsara si el navegasdor del usuario le da apoyo 
+// para poder recibir los service workers ,no todos lo tiene.
+// se registra el archiv, que sera tal cual es service worker.
+
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/sw.js').catch(error => {
+        console.log(error.message)
+    })
+}
 
 
 

@@ -1,0 +1,42 @@
+Sirven para hacer que nuestras aplicaciones funcionen Offline.
+
+Muy usados en las Progressive Web Apps (PWA) los ServiceWorkers 
+son una capa que vive entre el navegador y el Internet.
+
+Parecido a como lo hacen los proxys van a interceptar peticiones 
+para guardar el resultado en cache y la próxima vez que se haga 
+la petición tomar del cache ese resultado.
+
+capa que vive entre el navegadro y el internet  y l oaue hara 
+es parecido al proxys lo que hara es interceptar peticiones 
+y tener la oportunidad de pedir respuesta pero antes de que llegue al navegador 
+la vamos a guardar en cache.
+al volver s pedir la petición ya tendremos la respuesta y no es necesario ir a internet 
+entocnes simplmente regresamos la respuesta.
+
+
+DEV TOOLS:
+ir a consola de navegaro y buscar APLICATIONS ahi buscar service workers.
+da opciones: como offline/update and reloaded/ 
+los servirce workers xe instalan, el navegador lo hará en la computadors del usuariom ,
+ no es lo mismo dque una Appspero si va a vvir en el navegador.
+
+activar update and reload para agilizarlo.
+ahi vemos que empieza a correr.
+
+SELF: 
+Especifico para los networkers,
+se  crea un precache, nos dara una serie de recursos o assets que 
+queremos que ya esten cargados y se mantengan.
+
+retomar ejerccio desde: 7:47  en 1.5x
+
+- CATCH AN NETWORK     
+
+primero ir al cache y luego al network, 
+.put 
+repaso: 
+tenemos fetch , vamos a intentar recibir una respuesta cachada  si no la conseguimos 
+se busca en la red, luego actuslizamos cache para ese request donde si se ahra llamada
+ a networkpara actuslixar.
+ 

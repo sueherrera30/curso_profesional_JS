@@ -1,0 +1,20 @@
+PATRON OBSERVER:
+
+cuando hay un blog, y queremos saber cuando se publica uno, es mejor que nos avisen, 
+aunque ... podria ser un spam.
+todos los newsletters tienen link para unsubscribe, 
+
+
+2 participantes: 
+un SUJETO y OBSERVADORES.
+
+el SUJETO nos ofrece un mecanismo de subscripcion,cuando el sujeto tiene algo interesante, se 
+lo va a mostrar a toooodos los observadores.
+cuando un observador se aburre se puede desuscribirse, y listo. 
+
+nos ayuda a escribir codigo DESENFOCADO que nos ayuda a reducir los detalles de implementacion que 
+un objeto debe reconiocer de los otros, el OBSERVADOR nos tiene que prometr algo, tener un obdate.
+
+es uno de los patrones de diseño mas utilizado en el diseño ce sotwere. 
+el blog solo es un ejemplo, otroso socket.
+
