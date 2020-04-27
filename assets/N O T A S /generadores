@@ -1,0 +1,48 @@
+DUDAS:
+ al poner yaeild, el valor que pone puede ser cualqwuiera, numero si es string con '' ??
+
+// GENERASTORS:
+son funciones cuya ejecución puede comenzar, detenerce, el programa continua 
+y eventualmente regresamoas estas funciones y continuamos su ejecución.
+
+funciones especiales se peuden ejecutar y detener, luego se puede detener y regresar donde la dejamos, SE RECUERDAN DE 
+SU CONTEXTO!
+
+se van a declarar con un asterisco pegado sl fuction.
+esta funcion debe ser llamada, esta asl hacerlo vsa a crear una funcion que si se podra ejecutar.
+internamente podremos poner todo el codigo que queramos.
+
+primero declarar funcion, y guardarla en variable, ahi, ejecutarla.a esa es la que llamaremos 
+y a esa le aplicamos el .next() 
+
+
+al llamarala, nos dira que esta suspendido.los generadores tiene una funcion llamada .NEXT()
+lo cual indica, como go on!
+entonces si logamos va a regresarnos nuestro codigo ejecutado y nos pondra abajito un objeto 
+con el valor y con una propiedad DONE : True(esto por que indica que acabo su ejecución)
+
+para poder definir el valor, por que antes no dio undifinded, unsamod una llave que se llama YEILD 
+significa CEDER.
+al ceder(YEILD) podemos ceder un valor, como return -> yeild.
+justo es lo que va a agregar al valor del objeto que antes estaba como undefinded.
+
+hay un ejemplo con while(true), que los ayuda a asignar valores parandolo.
+
+en a.next() PODEMOS pasar un parametro,este va a establecer el valor del yeild, 
+es como si yeild fuera una funcion y este parametro es el valor que le estamos pasando.
+
+ejemplo: gen.next(true)  => valor va a ser uno.
+
+Nos ayudan a crear FUNCIONES EFICIENTES EN MEMORIA.
+
+ejemplo serie FIBONACCI:
+<< EL ULTIMO NUMMERO SIEMPRE VA A SER LA SUMA DE LOS DOS ULTIMOS NUMEROS EN LA LISTA >>
+
+entonces: GENERADORES, SON VALORES ESPECIALES CUYO VALOR PUEDE COMENZAR y detener a mitad de vuelo
+SI QUEREMOS CONTINUARLA o podemos pasarle un valor,ojo siempre recordar el scope 
+
+
+
+-------
+no permite general codigo eficiente probablemente infinito. 
+manejadores de memoria, nos ayuda a optimiarlos.

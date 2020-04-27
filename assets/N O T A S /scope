@@ -1,0 +1,87 @@
+SCOPE:
+ambito de una variable , representa el tiempo de vida 
+en el que esta existe, puede ser una variable definida o
+el argumento a una función.
+
+evita que rescribamos el valor de un funcion que 
+ya hayamos definido.
+
+js, no fue muy chido, con var.
+pero despues vino let y CONST.
+
+SCOPE GLOBAL:
+Al declarar una variable global, estarña disponible en 
+nuestro ambito global que es WINDOW.
+
+lo declaro entocnes fuera de una funcion o un bloque, pertenecera al scope global.
+
+tambien sucede cuando traemos variables de un CDN.
+
+SCOPE DE FUNCIONES:
+comercial => settimeout va a ejecutar una funcion eventualmente.
+
+cuando declaramos variables dentro de un programa  va a declararla, inicializarla 
+afuera.
+ejemplo de loop:
+
+function printNumber(){
+  var i;
+  for( i = 0; i < 10; i++){
+    setTimeOut(function() {
+      console.log(i);
+    },100)
+  }
+}
+al declararlo fuera, hara que el loop termine antes de que llegue al settime,
+cuando vaya a ejecutar ese console,log el valor actual sera 10,
+esto se resuelve con function scope;
+
+function printNumber(){
+  var i;
+  for( i = 0; i < 10; i++){
+    function eventurallyFunctionNumber (n) {
+      setTimeOut(function() {
+      console.log(n);
+    },100)
+    }
+    eventurallyFunctionNumber(i);
+  }
+}
+se agrega funcion dentro del for, con un argumento ene, 
+que es el que loguearemos,y la vamos a querer LLAMAR 
+CADA VEZ QUE OCURRA EL LOOP.
+entonces i se va a convertir en N,cada que se itere, por que cuando 
+ejecutamos i estamso entrando a un scope nuevo, un valor nuevo,
+por que al momento de ser llamada pasa a ser n, un valor totalmente distinto.
+
+
+LET y CONST  operan sobre el BLOCK SCOPE:
+
+en lugar de usar va usamos LET:
+function printNumber(){
+  for(let i = 0; i < 10; i++){
+      setTimeOut(function() {
+      console.log(n);
+    },100)
+  }
+}
+NO PODEMOS USAR CONST, por que el valor de i se va cambiando constantemente
+y no es igual.
+NO NECESITAMOS FUNCION EXTRA POR QUE VA A OPERAR SOBRE SU bloqueQUE CORRESPONDE AL for, 
+osea, NO SACA LA VARIABLE PARA DECLARARLA,
+ cada vez que se ejecuta va a crear un bloque nuevo,
+ por eso, la primera vez sera 0, luego 1, 2 ent.
+
+ MODULE SCOPE:
+  se limita a un archivo.
+  para ello en el script debemos describir su tipo que sera type="module"
+
+  esta limitando el alcance.
+
+  para poder interactuar entre ellos, debemos importar y exportar.
+
+  resumen; 
+  define tiempo de vida.
+  evita rescribir su valor
+ tipos en js:  GLOBAL/ FUNCTION/BLOCK / MODULE 
+

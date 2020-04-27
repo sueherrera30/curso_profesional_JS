@@ -23,8 +23,7 @@ class AutoPause {
     // en este caso solo hay uno,
     handleIntersection(entries){
         const entry = entries[0];
-        // si l oque recibe el intersector, es mayor que a lo del humbral entonces se hara visible.
-        const isVisible = entry.intersectionRatio >= this.threshhold;
+        // si l oque recibe el intersector, es mayor que a lo del humbral entonces se hara visible.-- por ejeplo si mandar mas de un elemento como las classes, devolvera un arreglo con mas indices.
         if(isVisible) {
             this.player.play()
         } else {

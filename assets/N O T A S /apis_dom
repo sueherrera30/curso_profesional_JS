@@ -1,0 +1,29 @@
+____________________________
+browser y node.js (v8) 
+nos dan propoiedades que aveces no soy propiedas del lueguaje de js. 
+APIS DEL DOM, que viven justo en el browser.
+beownser si es  visual mientras que node no.
+
+
+1.-FETCH.
+le da sanity a ahcer solicitudes a xttp, no solo funciona para get, sino para post delete y set. 
+si es local, y no requiere internet, no ne esitamos comunicarse con uservidor.
+
+
+2.- SERVICE WORKERS.
+es un proxy que nos permite interceptsr las llamadas hacia la red.
+como determinar si en realidad necesitas ir a la red.
+asi podemos guardar desde assets a solicitudes, que son os datos que hscen que la app tomen vida. 
+se guardan a nivel local.
+emular comportamiento de apps nativas  un service workers va de la mano con progressive set apps.
+
+MDN- MOZILLA  T W3S no la verde es la azul . AHI SE DEFINENN ESTANDARES - WHATGG??
+
+esto es mas bien para tener referencia, y poderlo usar cuando la necesites.
+
+TYPESCRIPT:
+
+semejante a java, ponerle tipos.
+se vuelve poderoso, se puede analizar ESTATICAMENTE. 
+mientras que js de forma natural es dinamica como python.
+ayuda a que se haga mas facil y podemos detectar errores de manera mas sencilla.
