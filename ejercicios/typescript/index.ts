@@ -86,3 +86,54 @@ comodin = { type: 'Wildcard'};
 let someObject: object =  { type: 'Holito'};
 
 // te permite ser especifico.
+
+// js funcione tman argumentos y regresan valor en type podemso ser explicitos 
+// como deben ser argumntos, podemos prover informacion de cual es el valor que debes regresar a la funcion
+
+// despues de parentesis, agregamos el tipo que regresa.
+
+function add2(a: number, b: number): number  {
+  return a + b;
+}
+
+//al poner los parentesis, ya me dice que debe regresar :D, 
+// sy esta importada ayuda,
+const sum2 = add(1,4);
+
+//aveces funciones regresan otras funciones:
+// para deficinir que regresa funcion con lo que recibe usamos:
+// () => 
+// (number) => number
+function createAdder(a: number): (number) => number {
+  return function (b: number) {
+    return b + a;
+  }
+}
+const addFour = createAdder(4);
+const fourPlus6 = addFour(4);
+
+function fullName(firstName: string, lastName: string): string {
+  return `${firstName} ${lastName}`;
+};
+const sue = fullName('suerox', 'herrera');
+
+// si no tengo la info, y no pongo argumento, me marca error entonces 
+// indicar que sea opcional:
+// usamos signo de interrogacion  entonces permitira que 
+// sea undefinded o string
+
+//VALOR OPCIONAL
+function fullName2(firstName: string, lastName?: string): string {
+  return `${firstName} ${lastName}`;
+};
+
+//VALOR POR OMISIÓN
+// despues del tipado poneos = mas l oque queremos poner como default:
+
+function fullName3(firstName: string, lastName: string = 'Martinez calcetines'): string {
+  return `${firstName} ${lastName}`;
+};
+const name2 = fullName3('sue');
+console.log(name2);
+// log dara:
+// sue martinez calcetines 
