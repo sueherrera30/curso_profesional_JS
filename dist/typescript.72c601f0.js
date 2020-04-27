@@ -246,8 +246,42 @@ function fullName3(firstName, lastName) {
 
 ;
 var name2 = fullName3('sue');
-console.log(name2); // log dara:
-// sue martinez calcetines
+console.log(name2);
+var Colorcito;
+
+(function (Colorcito) {
+  Colorcito["Rosa"] = "Rosa";
+  Colorcito["Verde"] = "Verde";
+})(Colorcito || (Colorcito = {})); // cuando tenemos un interfaz se vuelve un tipo
+// mi variable sera del tipo rectangulo.
+
+
+var rect = {
+  ancho: 4,
+  alto: 3,
+  // opcion
+  color: Colorcito.Rosa
+}; // si trato de tipar algo, pero no completo todo,
+// dara error, pedira, sera requerida.
+// podemos poner parametros que vengan de esta interfaz
+
+function area(r) {
+  //autocompleta.
+  return r.ancho * r.alto;
+}
+
+var areaRect = area(rect);
+console.log(areaRect); // si aplicamos metodo tu string nos dara [object, object]
+//  console.log(rect.toString())
+// los objetos herederan la funcion 
+
+rect.toString = function () {
+  return "Un rectangulo " + this.color;
+};
+
+console.log(rect.toString()); // definene la FORMA EXACTA QEU DEBE TENER UN OBJETO
+// no podemos agregar una propiedad de mas o de menos, si quiero ponerla 
+// opcional, debo marcarla.
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

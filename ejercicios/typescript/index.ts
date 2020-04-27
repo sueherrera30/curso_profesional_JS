@@ -137,3 +137,55 @@ const name2 = fullName3('sue');
 console.log(name2);
 // log dara:
 // sue martinez calcetines 
+
+
+// INTERFACES 
+// nos permiten declarar la forma que tiene un objeto
+// ayuda a auntocompletado y errores
+
+interface Rectangulo {
+  ancho: number,
+  alto: number,
+  color?: Colorcito;
+}
+
+
+enum Colorcito {
+  Rosa = "Rosa",
+  Verde = "Verde",
+}
+// cuando tenemos un interfaz se vuelve un tipo
+// mi variable sera del tipo rectangulo.
+let rect: Rectangulo = {
+  ancho: 4,
+  alto: 3,
+  // opcion
+  color: Colorcito.Rosa,
+}
+
+// si trato de tipar algo, pero no completo todo,
+// dara error, pedira, sera requerida.
+
+// podemos poner parametros que vengan de esta interfaz
+function area(r: Rectangulo): number {
+  //autocompleta.
+  return r.ancho * r.alto;
+}
+
+const areaRect = area(rect);
+console.log(areaRect);
+
+
+// si aplicamos metodo tu string nos dara [object, object]
+//  console.log(rect.toString())
+// los objetos herederan la funcion 
+
+rect.toString = function() {
+  return `Un rectangulo ${this.color}`
+};
+console.log(rect.toString());
+
+
+// definene la FORMA EXACTA QEU DEBE TENER UN OBJETO
+// no podemos agregar una propiedad de mas o de menos, si quiero ponerla 
+// opcional, debo marcarla.
